@@ -1,0 +1,245 @@
+  :root {
+    --primary: #64CCC5;
+    --secondary: rgba(23,107,135,0.75);
+    --dark: #053B50;
+    --light: #deeaf6;
+  }
+
+  div.skip a {
+    position: absolute;
+    background-color: var(--dark);
+    margin-left: 10px;
+    display: flex;
+    top: -50px;
+    color: var(--light);
+    padding: 5px;
+    border-radius: 5px;
+  }
+  div.skip a:focus{
+    top:10px;
+  }
+
+  .menubar{
+    border-bottom: 1px solid #3a3a3a;
+    position: relative;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #deeaf6;
+    box-sizing: content-box;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75px;
+}
+  
+  body {
+    font-family: Verdana, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/chain_background.jpeg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 350px;
+    height: 400px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  .card__inner {
+    width: 100%;
+    height: 100%;
+    padding-top: 25px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .card__inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .card__face {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .card__face img{
+    border-radius: 8px;
+    height: 320px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: auto;
+    display: block;
+    margin-bottom: auto;
+  }
+
+
+  .poster{
+    height: 400px;
+    padding-top: 5px;
+  }
+  
+  
+  .poster img{
+    border-radius: 5px;
+    height: 320px;
+  }
+  
+  .poster h3{
+    text-align: center;
+    font-size: larger;
+    color:rgb(245, 245, 245);
+    margin-top: 6px;
+  }
+
+
+  .info h3{
+    text-align: center;
+    font-size: larger;
+    color:var(--dark);
+    margin-top: 5px;
+  }
+
+  .info p, .info h6, .info li{
+    margin-left: 5px;
+  }
+
+  button{
+    background-color: var(--dark); /* Green */
+    border: solid;
+    border-radius: 5px;
+    color: var(--light);
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+
+
+
+
+
+  .card__face--front {
+    background-image: linear-gradient(to bottom right, var(--secondary), var(--dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card__face--front h3 {
+    color: var(--light);
+    font-size: larger;
+  }
+
+  .fa {
+    color: orange;
+  }
+  
+  .card__face--back {
+    background-color: var(--light);
+    transform: rotateY(180deg);
+  }
+  
+  .card__content {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .card__header {
+    position: relative;
+  }
+  
+  .card__header:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    z-index: -1;
+    border-radius: 0px 0px 50% 0px;
+  }
+  
+  .pp {
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    object-fit: cover;
+  }
+  
+  .card__header h2 {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .card__body {
+    padding: 30px;
+  }
+  
+  
+  .card__body p {
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+
+  @media only screen and (min-width:800px){
+    main{
+      grid-template-columns: 1fr 1fr;
+    }
+  
+  }
+  
+  @media only screen and (min-width:1200px){
+    main{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+  }
+  
+  @media only screen and (min-width:1600px){
+    main{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  
+  }
